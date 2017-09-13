@@ -1,0 +1,28 @@
+<div class="table-container">
+    <div></div>
+    <cdk-table [dataSource]="dataSource"
+               class="table">
+        <ng-container *ngFor="let colDirective of colDirectives" [cdkColumnDef]="colDirective.col">
+            <cdk-header-cell *cdkHeaderCellDef class="header-cell">
+                <ng-template [ngTemplateOutlet]="colDirective.header"
+                             [ngOutletContext]="{col: colDirective.col, table: this}">
+                </ng-template>
+            </cdk-header-cell>
+            <cdk-cell *cdkCellDef="let row; let rowIndex = index"
+                      class="cell"
+                      [class.row-hovered]="rowIndex === hoveredRowIndex"
+                      [class.first-row]="rowIndex === 0"
+                      (mouseover)="onMouseOverCell(rowIndex, row)"
+                      (mouseout)="onMouseOutCell(rowIndex, row)">
+                <ng-template [ngTemplateOutlet]="colDirective.cell"
+                             [ngOutletContext]="{col: colDirective.col, row: row, table: this}">
+                </ng-template>
+            </cdk-cell>
+        </ng-container>
+        <cdk-header-row *cdkHeaderRowDef="cols" class="header-row">
+        </cdk-header-row>
+        <cdk-row *cdkRowDef="let row; columns: cols" class="row">
+        </cdk-row>
+    </cdk-table>
+</div>
+

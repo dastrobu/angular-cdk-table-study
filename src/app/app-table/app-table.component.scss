@@ -1,0 +1,56 @@
+@import "../app.component";
+
+.table-container {
+    border-color: lightgrey;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    margin-bottom: 1px;
+    // to enable scrolling
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+}
+
+.table {
+    font-size: 10pt;
+}
+
+$header-padding: 5px;
+$header-margin: 1px;
+
+.header-cell {
+    font-family: $font-family;
+    background-color: lightblue;
+    text-align: center;
+    padding: $header-padding;
+    margin: $header-margin;
+    flex: 1;
+}
+
+.cell {
+    font-family: $font-family;
+    text-align: center;
+    padding: ($header-padding + $header-margin);
+
+    // set border properties on cell directly to be able to override it for first row (see below)
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: lightgray;
+
+    flex: 1;
+}
+
+.header-row, .row {
+    display: flex;
+}
+
+// first row should not have a top border (devider)
+.first-row {
+    border-top-style: hidden;
+}
+
+// class for hovered cell
+.row-hovered {
+    background-color: lightgray;
+}
+

@@ -1,0 +1,6 @@
+<span (click)="toggleSort()" style="cursor: default"><ng-content></ng-content>
+                    <i *ngIf="table.getSorting(col) === undefined" class="fa fa-chevron-up"
+                       style="visibility: hidden"></i>
+                    <i *ngIf="table.getSorting(col) === 'asc'" class="fa fa-chevron-up"></i>
+                    <i *ngIf="table.getSorting(col) === 'desc'" class="fa fa-chevron-down"></i>
+                    </span>

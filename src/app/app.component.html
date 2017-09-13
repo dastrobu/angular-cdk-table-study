@@ -1,0 +1,65 @@
+<h1> Table without sorting</h1>
+<div style="height: 100px">
+    <app-table [rowsProvider]="rowsTable">
+        <app-table-col [col]="'a'">
+            <ng-template let-col="col" let-table="table" app-table-header>
+                A
+            </ng-template>
+            <ng-template let-row="row" app-table-cell>
+                {{row.a}}
+            </ng-template>
+        </app-table-col>
+        <app-table-col [col]="'b'">
+            <ng-template let-col="col" let-table="table" app-table-header>
+                B
+            </ng-template>
+            <ng-template let-row="row" app-table-cell>
+                {{row.b}}
+            </ng-template>
+        </app-table-col>
+        <app-table-col [col]="'c'">
+            <ng-template let-col="col" let-table="table" app-table-header>
+                C
+            </ng-template>
+            <ng-template let-row="row" app-table-cell>
+                {{row.c}}
+            </ng-template>
+        </app-table-col>
+    </app-table>
+</div>
+<h1> Table with sorting</h1>
+<div style="height: 100px">
+    <app-table [rowsProvider]="rowsSortedTable" [(sorting)]="sorting">
+        <app-table-col [col]="'a'">
+            <ng-template let-col="col" let-table="table" app-table-header>
+                <app-table-sort-header [col]="col" [table]="table">
+                    A
+                </app-table-sort-header>
+            </ng-template>
+            <ng-template let-row="row" app-table-cell>
+                {{row.a}}
+            </ng-template>
+        </app-table-col>
+        <app-table-col [col]="'b'">
+            <ng-template let-col="col" let-table="table" app-table-header>
+                <app-table-sort-header [col]="col" [table]="table">
+                    B
+                </app-table-sort-header>
+            </ng-template>
+            <ng-template let-row="row" app-table-cell>
+                {{row.b}}
+            </ng-template>
+        </app-table-col>
+        <app-table-col [col]="'c'">
+            <ng-template let-col="col" let-table="table" app-table-header>
+                <app-table-sort-header [col]="col" [table]="table">
+                    C
+                </app-table-sort-header>
+            </ng-template>
+            <ng-template let-row="row" app-table-cell>
+                {{row.c}}
+            </ng-template>
+        </app-table-col>
+    </app-table>
+</div>
+

@@ -1,0 +1,11 @@
+.idea/workspace.xml
+
+# compiled output
+/dist
+
+# dependencies
+/node_modules
+
+# misc
+/.sass-cache
+
