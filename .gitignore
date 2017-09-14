@@ -8,4 +8,4 @@
 
 # misc
 /.sass-cache
-
+*.log
