@@ -44,6 +44,11 @@ $header-margin: 1px;
     display: flex;
 }
 
+.header-row {
+    position: sticky;
+    top: 0;
+}
+
 // first row should not have a top border (devider)
 .first-row {
     border-top-style: hidden;
